@@ -16,6 +16,12 @@
     },
     "shared": {
       "tags": []
+    },
+    "data": {
+      "tags": []
+    },
+    "data-products": {
+      "tags": []
     }
   }
 }

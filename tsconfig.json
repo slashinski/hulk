@@ -15,7 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@hulk/shared": ["libs/shared/src/index.ts"]
+      "@hulk/shared": ["libs/shared/src/index.ts"],
+      "@hulk/data": ["libs/data/src/index.ts"],
+      "@hulk/products": ["libs/products/src/index.ts"],
+      "@hulk/data/products": ["libs/data/products/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
