@@ -1,0 +1,85 @@
+<div fxFlex="100" fxLayout="column" [ngClass]="{ locked: lockMessage }">
+  <div
+    *ngIf="progress"
+    fxLayout="row"
+    fxLayoutAlign="space-between center"
+    class="pointer"
+    fastClick
+    (onFastClick)="toggleOpen()"
+  >
+    <!-- NEW UI -->
+    <div fxFlex="20" fxLayoutAlign="center">
+      <mat-icon
+        *ngIf="progress !== 'completed'"
+        [attr.api-aid]="'stage-icon-in-progress'"
+        [ngClass]="'not-started'"
+        >check_circle_outline</mat-icon
+      >
+      <!-- <mat-icon [attr.api-aid]="'stage-icon-in-progress'" -->
+      <!-- [ngClass]="getFeatureFlaggedCssClass('not-started')" -->
+      <!--
+        *ngIf="[journeyProgress.IN_PROGRESS, journeyProgress.STARTED, journeyProgress.NOT_STARTED]
+      -->
+      <!--
+        .includes(journeyStages[stageId].status)">check_circle_outline</mat-icon>
+      -->
+      <!-- Parent title -->
+      <mat-icon
+        *ngIf="progress === 'completed'"
+        [attr.api-aid]="'stage-icon-completed'"
+        [ngClass]="'completed'"
+        >check_circle</mat-icon
+      >
+      <!-- <mat-icon [attr.api-aid]="'stage-icon-completed'" -->
+      <!-- [ngClass]="getFeatureFlaggedCssClass('completed')" -->
+      <!--
+        *ngIf="journeyStages[stageId].status === journeyProgress.COMPLETED">check_circle</mat-icon>
+      -->
+    </div>
+
+    <div fxFlex="60" fxLayoutAlign="start">
+      <span>
+        <span *ngIf="icon" class="icon-holder {{ icon?.color }}">
+          <span class="icon {{ icon?.name }}"></span>
+        </span>
+        <span class="title {{ titleClass }} semibold" *ngIf="title">{{
+          title
+        }}</span>
+        <ng-content select="[accordion-title]"></ng-content>
+      </span>
+    </div>
+    <div fxFlex="20" fxLayoutAlign="center">
+      <mat-icon class="material-icons mat-icon {{ arrowClass }}"
+        >{{ isOpen ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}
+      </mat-icon>
+    </div>
+  </div>
+  <hulk-split-layout *ngIf="!progress"
+    leftFlex="80"
+    rightFlex="20"
+    class="pointer"
+    fastClick
+    (onFastClick)="toggleOpen()"
+    rightAlign="center end"
+    titleMarginTop="{{ titleMarginTop }}"
+  >
+    <span split-left>
+      <span *ngIf="icon" class="icon-holder {{ icon?.color }}">
+        <span class="icon {{ icon?.name }}"></span>
+      </span>
+      <span class="title {{ titleClass }} semibold">{{ title }}</span>
+    </span>
+    <mat-icon
+      split-right
+      class="material-icons mat-icon {{ arrowClass }}"
+      [attr.api-aid]="isOpen ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+      >{{ isOpen ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}
+    </mat-icon>
+  </hulk-split-layout>
+  <div *ngIf="lockMessage" class="locked-message">
+    <p>{{ lockMessage }}</p>
+  </div>
+  <div class="content" *ngIf="isOpen" [@openState]="'expanded'">
+    <ng-content></ng-content>
+  </div>
+</div>

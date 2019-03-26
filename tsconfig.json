@@ -22,8 +22,12 @@
       "@hulk/shared/test-utilities": [
         "libs/shared/test-utilities/src/index.ts"
       ],
-      "@hulk/shared/products": ["libs/shared/products/src/index.ts"],
-      "@hulk/shared/title-header": ["libs/shared/title-header/src/index.ts"]
+      "@hulk/shared/title-header": ["libs/shared/title-header/src/index.ts"],
+      "@hulk/ui": ["libs/ui/src/index.ts"],
+      "@hulk/ui/custom-material": ["libs/ui/custom-material/src/index.ts"],
+      "@hulk/ui/accordian": ["libs/ui/accordian/src/index.ts"],
+      "@hulk/ui/fast-click": ["libs/ui/fast-click/src/index.ts"],
+      "@hulk/ui/split-layout": ["libs/ui/split-layout/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

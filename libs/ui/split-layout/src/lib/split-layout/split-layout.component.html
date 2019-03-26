@@ -1,0 +1,13 @@
+<section [fxFlex]="mainFlex" fxLayout="row" [fxLayoutAlign]="mainLayoutAlign">
+  <article
+    [fxFlex]="leftFlex"
+    fxLayout="column"
+    [fxLayoutAlign]="leftAlign"
+    [ngStyle]="{ 'margin-top': titleMarginTop }"
+  >
+    <ng-content select="[split-left]"></ng-content>
+  </article>
+  <article [fxFlex]="rightFlex" fxLayout="column" [fxLayoutAlign]="rightAlign">
+    <ng-content select="[split-right]"></ng-content>
+  </article>
+</section>

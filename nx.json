@@ -29,10 +29,22 @@
     "shared-test-utilities": {
       "tags": []
     },
-    "shared-products": {
+    "shared-title-header": {
       "tags": []
     },
-    "shared-title-header": {
+    "ui": {
+      "tags": []
+    },
+    "ui-custom-material": {
+      "tags": []
+    },
+    "ui-accordian": {
+      "tags": []
+    },
+    "ui-fast-click": {
+      "tags": []
+    },
+    "ui-split-layout": {
       "tags": []
     }
   }

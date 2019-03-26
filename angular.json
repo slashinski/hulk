@@ -270,37 +270,6 @@
         }
       }
     },
-    "shared-products": {
-      "root": "libs/shared/products",
-      "sourceRoot": "libs/shared/products/src",
-      "projectType": "library",
-      "prefix": "hulk",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/shared/products/tsconfig.lib.json",
-              "libs/shared/products/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/builders:jest",
-          "options": {
-            "jestConfig": "libs/shared/products/jest.config.js",
-            "tsConfig": "libs/shared/products/tsconfig.spec.json",
-            "setupFile": "libs/shared/products/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {
-        "@nrwl/schematics:component": {
-          "styleext": "scss"
-        }
-      }
-    },
     "shared-title-header": {
       "root": "libs/shared/title-header",
       "sourceRoot": "libs/shared/title-header/src",
@@ -323,6 +292,161 @@
             "jestConfig": "libs/shared/title-header/jest.config.js",
             "tsConfig": "libs/shared/title-header/tsconfig.spec.json",
             "setupFile": "libs/shared/title-header/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "ui": {
+      "root": "libs/ui",
+      "sourceRoot": "libs/ui/src",
+      "projectType": "library",
+      "prefix": "hulk",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui/tsconfig.lib.json",
+              "libs/ui/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/ui/jest.config.js",
+            "tsConfig": "libs/ui/tsconfig.spec.json",
+            "setupFile": "libs/ui/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "ui-custom-material": {
+      "root": "libs/ui/custom-material",
+      "sourceRoot": "libs/ui/custom-material/src",
+      "projectType": "library",
+      "prefix": "hulk",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui/custom-material/tsconfig.lib.json",
+              "libs/ui/custom-material/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/ui/custom-material/jest.config.js",
+            "tsConfig": "libs/ui/custom-material/tsconfig.spec.json",
+            "setupFile": "libs/ui/custom-material/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "ui-accordian": {
+      "root": "libs/ui/accordian",
+      "sourceRoot": "libs/ui/accordian/src",
+      "projectType": "library",
+      "prefix": "hulk",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui/accordian/tsconfig.lib.json",
+              "libs/ui/accordian/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/ui/accordian/jest.config.js",
+            "tsConfig": "libs/ui/accordian/tsconfig.spec.json",
+            "setupFile": "libs/ui/accordian/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "ui-fast-click": {
+      "root": "libs/ui/fast-click",
+      "sourceRoot": "libs/ui/fast-click/src",
+      "projectType": "library",
+      "prefix": "hulk",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui/fast-click/tsconfig.lib.json",
+              "libs/ui/fast-click/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/ui/fast-click/jest.config.js",
+            "tsConfig": "libs/ui/fast-click/tsconfig.spec.json",
+            "setupFile": "libs/ui/fast-click/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "ui-split-layout": {
+      "root": "libs/ui/split-layout",
+      "sourceRoot": "libs/ui/split-layout/src",
+      "projectType": "library",
+      "prefix": "hulk",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui/split-layout/tsconfig.lib.json",
+              "libs/ui/split-layout/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/ui/split-layout/jest.config.js",
+            "tsConfig": "libs/ui/split-layout/tsconfig.spec.json",
+            "setupFile": "libs/ui/split-layout/src/test-setup.ts"
           }
         }
       },

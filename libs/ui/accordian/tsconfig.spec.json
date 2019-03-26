@@ -1,7 +1,7 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../../dist/out-tsc/libs/shared/products",
+    "outDir": "../../../dist/out-tsc/libs/ui/accordian",
     "module": "commonjs",
     "types": ["jest", "node"]
   },

@@ -1,0 +1,113 @@
+@import '../../../../../shared/theme/src/lib/variables.scss';
+@import '../../../../../shared/theme/src/lib/utilities.scss';
+
+.pointer {
+  cursor: pointer;
+}
+
+.grey-heading {
+  color: $clay-grey;
+}
+
+.content {
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 20px;
+  color: $clay-grey;
+}
+
+split-layout:focus {
+  outline: none;
+}
+
+.grey-icon {
+  color: $ink-black;
+  opacity: 0.5;
+}
+
+.bpf-arrow {
+  width: 18px;
+  color: $sky-blue;
+}
+
+.bpf-arrow-big {
+  width: 40px;
+  height: 40px;
+  font-size: 40px;
+  color: $sky-blue;
+}
+
+.bpf-arrow-big-grey {
+  width: 40px;
+  height: 40px;
+  font-size: 40px;
+  color: $clay-grey;
+}
+
+.bpf-arrow-grey {
+  width: 18px;
+  color: $clay-grey;
+}
+
+.icon-holder {
+  width: 64px;
+  height: 64px;
+  border-radius: 100%;
+  margin-right: 15px;
+  color: $white;
+  padding: 17px;
+  display: inline-block;
+  .icon {
+    width: 28px;
+    height: 28px;
+    font-size: 28px;
+  }
+}
+.title-link {
+  color: $sky-blue;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.h2 {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 36px;
+}
+
+.h4 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 26px;
+}
+
+.locked-message {
+  p {
+    font-size: 12px;
+    opacity: 0.5;
+  }
+}
+
+.locked {
+  .title-link {
+    opacity: 0.5;
+  }
+  .bpf-arrow-grey {
+    opacity: 0.5;
+    margin-bottom: -24px;
+  }
+}
+
+.tile-mobile-title {
+  @include poppins-semi-bold(14px);
+}
+
+.completed {
+  color: $lava;
+  background-color: $white;
+}
+
+.not-started {
+  color: $manatee;
+  background-color: $white;
+}

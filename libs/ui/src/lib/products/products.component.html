@@ -1,28 +1,14 @@
-<h1>library products works!</h1>
-
 <ng-container *ngIf="(mediaChanges$ | async) as mediaChange">
   <div fxLayout="column" fxFlex>
-    <hulk-title-header
-      titleTranslationKey="OUR_PRODUCTS.TITLE"
-    ></hulk-title-header>
+    <hulk-title-header titleTranslationKey="OUR_PRODUCTS.TITLE"></hulk-title-header>
     <div fxLayout="row" fxLayoutAlign="center center" fxHide.lt-md>
       <div fxLayout="row wrap" class="tiles-container">
         <mat-card *ngFor="let product of products" class="tile">
           <div class="header-color"></div>
           <br />
-          <div
-            class="tile-title"
-            [attr.api-aid]="'product-title-' + product.ID"
-          >
-            {{ product.TITLE }}
-          </div>
+          <div class="tile-title" [attr.api-aid]="'product-title-' + product.ID">{{ product.TITLE }}</div>
           <br />
-          <div
-            class="tile-body"
-            [attr.api-aid]="'product-description-' + product.ID"
-          >
-            {{ product.DESCRIPTION }}
-          </div>
+          <div class="tile-body" [attr.api-aid]="'product-description-' + product.ID">{{ product.DESCRIPTION }}</div>
           <br />
           <div fxLayoutAlign="center start" class="button-container">
             <button
@@ -38,25 +24,18 @@
       </div>
     </div>
 
-    <div
-      fxLayout="column"
-      fxLayoutAlign="center center"
-      *ngIf="mediaChange.isMobile"
-    >
+    <div fxLayout="column" fxLayoutAlign="center center" *ngIf="mediaChange.isMobile">
       <div *ngFor="let product of products" class="tile-mobile">
         <div class="header-color"></div>
         <mat-card class="expander-tile-mobile">
-          <app-accordion
+          <hulk-accordian
             title="{{ product.TITLE }}"
             titleClass="tile-mobile-title"
             arrowClass="bpf-arrow-big-grey"
             titleMarginTop="7px"
             [attr.api-aid]="'product-title-' + product.ID"
           >
-            <div
-              class="tile-body-mobile"
-              [attr.api-aid]="'product-description-' + product.ID"
-            >
+            <div class="tile-body-mobile" [attr.api-aid]="'product-description-' + product.ID">
               {{ product.DESCRIPTION }}
             </div>
             <br />
@@ -70,17 +49,13 @@
                 {{ 'GO' | translate }}
               </button>
             </div>
-          </app-accordion>
+          </hulk-accordian>
         </mat-card>
       </div>
     </div>
     <div class="legal-text-container">
-      <span class="darkgray-text text-padding">{{
-        'OUR_PRODUCTS.LEGAL1' | translate
-      }}</span>
-      <span class="darkgray-text text-padding">{{
-        'OUR_PRODUCTS.LEGAL2' | translate
-      }}</span>
+      <span class="darkgray-text text-padding">{{ 'OUR_PRODUCTS.LEGAL1' | translate }}</span>
+      <span class="darkgray-text text-padding">{{ 'OUR_PRODUCTS.LEGAL2' | translate }}</span>
     </div>
   </div>
 </ng-container>

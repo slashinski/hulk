@@ -4,14 +4,11 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 // libraries
-import { SharedProductsModule } from '@hulk/shared/products';
+import { UiModule } from '@hulk/ui';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    SharedProductsModule
-  ],
+  imports: [BrowserModule, UiModule],
   providers: [],
   bootstrap: [AppComponent]
 })

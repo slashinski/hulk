@@ -1,14 +1,14 @@
 import { async, TestBed } from '@angular/core/testing';
-import { SharedProductsModule } from './shared-products.module';
+import { UiAccordianModule } from './ui-accordian.module';
 
-describe('SharedProductsModule', () => {
+describe('UiAccordianModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [SharedProductsModule]
+      imports: [UiAccordianModule]
     }).compileComponents();
   }));
 
   it('should create', () => {
-    expect(SharedProductsModule).toBeDefined();
+    expect(UiAccordianModule).toBeDefined();
   });
 });
