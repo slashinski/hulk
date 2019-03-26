@@ -25,6 +25,9 @@
     },
     "shared-theme": {
       "tags": []
+    },
+    "shared-test-utilities": {
+      "tags": []
     }
   }
 }

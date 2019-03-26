@@ -1,16 +1,28 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { MediaObserver } from '@angular/flex-layout';
+import { MatCardModule } from '@angular/material';
+import { MockTranslatePipe } from '@hulk/shared/test-utilities';
+import { of } from 'rxjs';
 import { ProductsComponent } from './products.component';
 
 describe('ProductsComponent', () => {
   let component: ProductsComponent;
   let fixture: ComponentFixture<ProductsComponent>;
+  const mockObservableMedia = {
+    isActive: () => {},
+    asObservable: () => {
+      return of({ isMobile: false });
+    }
+  };
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProductsComponent ]
-    })
-    .compileComponents();
+      imports: [MatCardModule],
+      declarations: [ProductsComponent, MockTranslatePipe],
+      providers: [{ provide: MediaObserver, useValue: mockObservableMedia }],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

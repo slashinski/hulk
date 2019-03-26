@@ -238,6 +238,37 @@
           "styleext": "scss"
         }
       }
+    },
+    "shared-test-utilities": {
+      "root": "libs/shared/test-utilities",
+      "sourceRoot": "libs/shared/test-utilities/src",
+      "projectType": "library",
+      "prefix": "hulk",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/test-utilities/tsconfig.lib.json",
+              "libs/shared/test-utilities/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/shared/test-utilities/jest.config.js",
+            "tsConfig": "libs/shared/test-utilities/tsconfig.spec.json",
+            "setupFile": "libs/shared/test-utilities/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {
