@@ -1,0 +1,3 @@
+<div fxLayout="row" fxLayoutAlign="center center" [ngClass]="{ 'alt-title': altStyle }" class="title-container">
+  <span [ngClass]="{ 'bold-title': !altStyle }">{{ title ? title : (titleTranslationKey | translate) }}</span>
+</div>

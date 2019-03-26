@@ -22,7 +22,8 @@
       "@hulk/shared/test-utilities": [
         "libs/shared/test-utilities/src/index.ts"
       ],
-      "@hulk/shared/products": ["libs/shared/products/src/index.ts"]
+      "@hulk/shared/products": ["libs/shared/products/src/index.ts"],
+      "@hulk/shared/title-header": ["libs/shared/title-header/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

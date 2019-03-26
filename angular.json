@@ -300,6 +300,37 @@
           "styleext": "scss"
         }
       }
+    },
+    "shared-title-header": {
+      "root": "libs/shared/title-header",
+      "sourceRoot": "libs/shared/title-header/src",
+      "projectType": "library",
+      "prefix": "hulk",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/title-header/tsconfig.lib.json",
+              "libs/shared/title-header/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/shared/title-header/jest.config.js",
+            "tsConfig": "libs/shared/title-header/tsconfig.spec.json",
+            "setupFile": "libs/shared/title-header/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {
