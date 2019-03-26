@@ -1,16 +1,71 @@
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
+// The file contents for the current environment will overwrite these during build.
+// The build system defaults to the dev environment which uses `environment.ts`, but if you do
+// `ng build --env=prod` then `environment.prod.ts` will be used instead.
+// The list of which env maps to which file can be found in `angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  environmentName: 'local',
+  BASE_HREF: '/',
+  BASE_HREF_BUDGET_REGISTRATION: '/',
+  AWS_REGION: 'us-east-1',
+  API_KEY: 'SWXPlYcrsh66bpOZ4J5aTa4fDGjuLyHT4MsX0Q2L',
+  USERS_API: 'https://vz2gzmirz1.execute-api.us-east-1.amazonaws.com/stage',
+  USER_POOL_ID: 'us-east-1_7jZpszqBb',
+  USER_POOL_CLIENT_ID: '27vd8je4i5k7rgtu6615sa797g',
+  IDENTITY_POOL_ID: 'us-east-1:9298a12d-e795-4967-b878-5d0fbb26fbfb',
+  COGNITO_IDP_URL: 'cognito-idp.us-east-1.amazonaws.com/us-east-1_7jZpszqBb',
+  IS_MOCK: false,
+  ASSESSMENT_API: 'https://mw77byz4bb.execute-api.us-east-1.amazonaws.com/stage',
+  CARDS_API: 'https://h72f7x0pse.execute-api.us-east-1.amazonaws.com/stage',
+  EVENT_API: 'https://3z5gs30dzf.execute-api.us-east-1.amazonaws.com/stage',
+  GUIDE_API: 'https://wk8g5ksm75.execute-api.us-east-1.amazonaws.com/stage',
+  PATHWAYS_API: 'https://vsnnl0h741.execute-api.us-east-1.amazonaws.com/stage',
+  NOTIFICATIONS_API: 'https://lqtp01rzri.execute-api.us-east-1.amazonaws.com/stage',
+  CHALLENGES_API: 'https://mjqtilret9.execute-api.us-east-1.amazonaws.com/stage',
+  EMAIL_CHANNEL: '5547',
+  SMS_CHANNEL: '6349',
+  DAILY_EMAIL_TYPE: '6490',
+  DAILY_SMS_TYPE: '6897',
+  CONNECTION_API: 'https://bl1ug8wpve.execute-api.us-east-1.amazonaws.com/stage',
+  BOLDCHAT_CHAT_WINDOW_URL: 'https://testapps.brightpeakfinancial.com/boldchat/themes/bpf',
+  BOLDCHAT_SESSION_API_KEY: '350578603775649107:348288314837302215:8tRDpZgy08j7fV7s986ybWQSzlijnF91',
+  BOLDCHAT_SDK: 'https://testapps.brightpeakfinancial.com/boldchat/scripts/bc-sdk-start.min.js',
+  BOLDCHAT_ACCOUNT_ID: '350578603775649107',
+  BOLDCHAT_WEBSITE_ID: '348053487451577460',
+  BOLDCHAT_INVITATION_ID: '40045917177716968',
+  MX_API: 'https://73ax18ffrb.execute-api.us-east-1.amazonaws.com/stage',
+  ILLUMINATE_APP_SCHEME_NAME: 'brightpeak://navigate?screen=credential_login',
+  SENTRY_URL: '',
+  DOORBELLIO_ID: '6684',
+  DOORBELLIO_API_KEY: 'U42u07HYlNndtjhbyCAKe0YgWNwU9CNeZAgRsUh6mmTZ8EKCsvK8GmymzMHsea4P',
+  DOORBELLIO_API: 'https://doorbell.io/api/applications/',
+  LIMESURVEY_BASE_DOMAIN: 'http://assessment.inno.brightpeakfinancial.rocks',
+  QUOTE_API: 'https://testapps.brightpeakfinancial.com/bpfServices/api/v1/quote',
+  ONBOARDING_ASSESSMENT_ID: '54321',
+  RELATIONSHIP_HEALTH_ASSESSMENT_ID: '145566',
+  FINANCIAL_WELLNESS_ASSESSMENT_ID: '538958',
+  PERSONAL_GOAL_ASSESSMENT_ID: '233472',
+  MONEY_PERSONALITY_ASSESSMENT_ID: '870525',
+  TERM_APP_URL: 'https://dev.brightpeakfinancial.com/term-insurance-application/',
+  DISABILITY_APP_URL: 'https://dev.brightpeakfinancial.com/disability-insurance-application/',
+  SUBMITCONTACT_API: 'https://testapps.brightpeakfinancial.com/bpfServices/api/v1/SubmitContact',
+  SMART_STREET_API: 'https://us-zipcode.api.smartystreets.com/lookup',
+  SMART_STREET_AUTH_ID: '13638870299577353',
+  BRIGHTPEAK_HOME_URL: 'http://localhost:4200',
+  VERSION: '0.0.0.0',
+  HEAP_APP_ID: '672723000',
+  BUDGET_REGISTRATION_HEAP_APP_ID: '1578870760',
+  WISTIA_SCRIPT_URL: 'https://fast.wistia.com/assets/external/E-v1.js',
+  WISTIA_POP_SCRIPT_URL: 'https://fast.wistia.com/assets/external/popover-v1.js',
+  SUBSCRIPTION_API: 'https://lqtp01rzri.execute-api.us-east-1.amazonaws.com/stage/notifications',
+  USER_S3_BUCKET_URL: 'https://s3.amazonaws.com/bpf-innovate-media/',
+  LAUNCH_DARKLY_TOGETHER_WEBAPP_CLIENT_SIDE_ID: '5ae0b562ccfb1b2eadb46a66',
+  LAUNCH_DARKLY_TOGETHER_WEBAPP_SDK_KEY: 'sdk-76bafbc5-a0f3-4922-b8b4-7a4a49874576',
+  CAREER_KEY_API_KEY:
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWREYXRhIjp7Imhvc3RQYWdlVXJsIjoiaHR0cHM6Ly9hcHAuZGV2LnRocml2ZXRvZ2V0aGVyLmNvbS90b29scy9jYXJlZXItYXNzZXNzbWVudCIsInNwb25zb3JlZE9yZ2FuaXphdGlvbklkIjoiZDZjMGMxOTgtMTk0NS1iNGJjLTEwMWMtZDNmYjhiNDhjMTFiIiwiY3JlYXRlZERhdGUiOiIyMDE4LTExLTA4VDAyOjI3OjUzLjk0MVoifSwiaWF0IjoxNTQxNjQ0MDczfQ.yEAz2grbIGfd3WntixEaMwIFbKVC2u5_lCEJC_v9HFA',
+  IE_CLIENT_ID_BRIGHTPEAK: '',
+  IE_CLIENT_ID_THRIVETOGETHER: '',
+  IE_TOOL_BASE_URL: 'https://invite-education-tools-dev.herokuapp.com',
+  ADRUM_EUM_SCRIPT_URL: 'https://cdn.appdynamics.com/adrum/adrum-4.5.5.1794.js'
 };
-
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
