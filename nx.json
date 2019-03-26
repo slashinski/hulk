@@ -28,6 +28,9 @@
     },
     "shared-test-utilities": {
       "tags": []
+    },
+    "shared-products": {
+      "tags": []
     }
   }
 }
