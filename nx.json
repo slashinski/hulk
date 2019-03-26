@@ -46,6 +46,12 @@
     },
     "ui-split-layout": {
       "tags": []
+    },
+    "products": {
+      "tags": []
+    },
+    "products-e2e": {
+      "tags": []
     }
   }
 }

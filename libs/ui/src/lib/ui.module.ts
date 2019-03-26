@@ -7,10 +7,9 @@ import { UiAccordianModule } from '@hulk/ui/accordian';
 import { UiCustomMaterialModule } from '@hulk/ui/custom-material';
 import { TranslateModule } from '@ngx-translate/core';
 
+import { ProductsComponent } from './products/products.component';
 
 const routes: Routes = [{ path: '', component: ProductsComponent }];
-
-import { ProductsComponent } from './products/products.component';
 
 @NgModule({
   imports: [
