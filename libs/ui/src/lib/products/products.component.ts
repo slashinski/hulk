@@ -20,7 +20,9 @@ export class ProductsComponent implements OnInit {
     })
   );
 
-  constructor(private media: MediaObserver) {}
+  constructor(private media: MediaObserver) {
+
+  }
 
   ngOnInit() {
     this.products = PRODUCTS;
