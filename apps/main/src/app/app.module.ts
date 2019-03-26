@@ -3,9 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+// libraries
+import { SharedModule } from '@hulk/shared';
+
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule],
+  imports: [
+    BrowserModule,
+    SharedModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
