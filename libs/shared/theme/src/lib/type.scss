@@ -1,0 +1,142 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* FONT WEIGHT CLASS VARIABLES */
+.regular {
+  font-weight: 400;
+}
+.medium {
+  font-weight: 500;
+}
+.semibold {
+  font-weight: 600;
+}
+/* FONT CLASSES */
+h1,
+h2,
+h3,
+h4,
+.small-h4,
+h5,
+p,
+h6,
+.h7 {
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  font-size: 32px;
+  line-height: 38px;
+  font-weight: 600;
+}
+h2 {
+  font-size: 32px;
+  line-height: 38px;
+  font-weight: 600;
+}
+h3,
+.h3 {
+  font-size: 20px;
+  line-height: 26px;
+}
+h4 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+.small-h4 {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+}
+h5,
+.h5 {
+  font-size: 14px;
+  line-height: 20px;
+}
+p {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.chapter-card {
+  .secondary-text p {
+    font-size: 14px;
+    line-height: 24px;
+    color: $clay-grey;
+  }
+  .challenge-step p {
+    padding: 15px 0 10px 0;
+  }
+}
+h6,
+.h6 {
+  font-size: 12px;
+  line-height: 16px;
+}
+.h7 {
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 12px;
+}
+.small {
+  font-size: 12px;
+  line-height: 20px;
+}
+
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+input:focus:-moz-placeholder {
+  color: transparent;
+} /* FF 4-18 */
+input:focus::-moz-placeholder {
+  color: transparent;
+} /* FF 19+ */
+input:focus:-ms-input-placeholder {
+  color: transparent;
+} /* IE 10+ */
+
+/* ---------------------------------------------------- */
+@media screen and (min-width: $BREAKPOINT-600) {
+  /* FONT CLASSES */
+  h1 {
+    font-size: 72px;
+    line-height: 86px;
+    font-size: calc(32px + 3.1vw);
+    line-height: calc(38px + 3.75vw);
+  }
+  h2 {
+    font-size: 52px;
+    line-height: 62px;
+    font-size: calc(32px + 1.5vw);
+    line-height: calc(38px + 1.8vw);
+  }
+  h3 {
+    font-size: 28px;
+    line-height: 36px;
+    font-size: calc(20px + 0.6vw);
+    line-height: calc(26px + 0.78vw);
+  }
+  h4,
+  .small-h4 {
+    font-size: 20px;
+    line-height: 26px;
+  }
+} //end mediaQuery
+
+@media screen and (min-width: $BREAKPOINT-1280) {
+  h1 {
+    font-size: 72px;
+    line-height: 86px;
+  }
+  h2 {
+    font-size: 52px;
+    line-height: 62px;
+  }
+  h3 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}

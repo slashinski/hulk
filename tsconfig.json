@@ -18,7 +18,10 @@
       "@hulk/shared": ["libs/shared/src/index.ts"],
       "@hulk/data": ["libs/data/src/index.ts"],
       "@hulk/products": ["libs/products/src/index.ts"],
-      "@hulk/data/products": ["libs/data/products/src/index.ts"]
+      "@hulk/data/products": ["libs/data/products/src/index.ts"],
+      "@hulk/shared-theme": ["libs/shared-theme/src/index.ts"],
+      "@hulk/shared/themes": ["libs/shared/themes/src/index.ts"],
+      "@hulk/shared/theme": ["libs/shared/theme/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

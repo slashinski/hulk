@@ -1,0 +1,74 @@
+$BREAKPOINT-600: 600px;
+$BREAKPOINT-960: 960px;
+$BREAKPOINT-1280: 1280px;
+$BREAKPOINT-1440: 1440px;
+
+// these variables control the plethora of different styles to set card width throughout the app.
+$chapter-card-width: 550px;
+$challenge-card-width: 550px;
+$challenge-step-width: 550px;
+$chapter-card-img-width: 550px;
+
+$primary-margin-x: 24px;
+$primary-margin-y: 50px;
+$cta-button-margin-above: 40px;
+
+$white: #fff;
+$white-ghost: #fafafa;
+$white-mist: #e5e5e5;
+$fog-grey: #b4b4b4;
+$clay-grey: #8d8f91;
+$charcoal-black: #404243;
+$ink-black: #292525;
+$sky-blue: #0091ea;
+$cobalt-blue: #1565c0;
+$tea-green: #00bfa5;
+$forest-green: #2aa69a;
+$venetian-red: #ed5148;
+$error-red: #f05149;
+$blue-gray: #5ba5d1;
+$brick-red: #d3425a;
+$moonstone-blue: #63b1bc;
+$silver: #b8bdc1;
+$dim-gray: #616c75;
+$gray: #a4aaaf;
+$outer-space-black: #4a4a4a;
+$bronze: #c8a85c;
+$lava-red: #c8102e;
+$fountain-blue: #63b1bc;
+
+$rating-hover: #009688;
+$bpf-gradient-stop-1: $tea-green;
+$bpf-gradient-stop-2: $blue-gray;
+
+$checkbox-mark-color: white;
+$mercury: #e1e1e1;
+$trolley-grey: #7c7c7c;
+$light-sea-green: #09ad97;
+$fancy-line: rgba(229, 229, 229, 0.5);
+$muted-black: #246c75;
+$dark-sea-green: #317c94;
+$black: #000000;
+$platinum: #eaeaea;
+$light-grey: #f6f6f6;
+$disabled-grey: #d0d0d0;
+$box-shadow: rgba(0, 0, 0, 0.16);
+$manatee: #9b9b9b;
+$dimgray: #616c75;
+$darkgray: #a4aaaf;
+$horizontal-bar-grey: #d8d8d8;
+$outer-space: #4a4a4a;
+$lava: #c8102e;
+$ash-grey: #b8b8b8;
+$munsell: #f1f1f1;
+$lion: #bc9d63;
+$cadet: #5b6770;
+$dark-grey: #a3a3a3;
+$dark-tangerine: rgba(245, 166, 35, 1);
+$dark-tangerine-transparent: rgba(245, 166, 35, 0.7);
+$lavender-grey: rgba(201, 205, 208, 1);
+$toolbox: rgba(122, 99, 188, 1);
+$toolbox-transparent: rgba(122, 99, 188, 0.7);
+$mantis: rgba(108, 204, 108, 1);
+$mantis-transparent: rgba(108, 204, 108, 0.7);
+$taupe: #353535;

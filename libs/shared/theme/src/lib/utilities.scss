@@ -1,0 +1,707 @@
+@import './variables.scss';
+
+.primary-container {
+  width: 100%;
+  max-width: $BREAKPOINT-1280;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.secondary-container {
+  @extend .primary-container;
+  max-width: 852px;
+  margin-top: 25px;
+  margin-bottom: 42px;
+}
+// Support for Mobile Safari and FxFlexIssue
+[fxlayout='row'] {
+  flex: 1 !important;
+}
+.pill {
+  display: inline-block;
+  border-radius: 39px;
+  margin-top: 27px;
+  :first-child {
+    padding: 0.01em 1.2em 0em 1.2em;
+    line-height: normal;
+  }
+}
+.pill-light {
+  @extend .pill;
+  color: $ink-black;
+  background-color: $white;
+}
+.pill-dark {
+  @extend .pill;
+  color: $white;
+  background-color: var(--pill-dark-background);
+  font-weight: var(--pill-dark-font-weight);
+}
+
+/* Make superscript not effect the line spacing above it.
+   Thanks, Stack Overflow: https://stackoverflow.com/a/1530819/9117
+ */
+sup {
+  vertical-align: top;
+  font-size: 0.6em;
+}
+
+/* ---------------------------------------------------- */
+@media screen and (min-width: $BREAKPOINT-600) {
+  .primary-container {
+    padding: 0 24px;
+  }
+  .secondary-container {
+    margin-top: 40px;
+    margin-bottom: 98px;
+  }
+  .push {
+    min-height: 90vh;
+  }
+  .pill {
+    margin-top: 47px;
+  }
+}
+
+//GRADIENTS
+@mixin make-gradient($angle, $startColor, $endColor) {
+  background: $startColor; /* Old browsers */
+  background: -moz-linear-gradient($angle, $startColor 20%, $endColor 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient($angle, $startColor 20%, $endColor 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    $angle,
+    $startColor 20%,
+    $endColor 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=#{$startColor}, endColorstr=#{$endColor}, GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+@mixin secondary-gradient() {
+  @include make-gradient(270deg, $light-sea-green, $blue-gray);
+}
+@mixin golden-gradient() {
+  background: -moz-linear-gradient(45deg, rgba(67, 57, 40, 0.2) 0%, rgba(106, 70, 9, 0.3) 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(67, 57, 40, 0.2) 0%,
+    rgba(106, 70, 9, 0.3) 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    45deg,
+    rgba(67, 57, 40, 0.2) 0%,
+    rgba(106, 70, 9, 0.3) 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33433928', endColorstr='#4d6a4609',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+@mixin primary-gradient() {
+  background: #00bfa5; /* Old browsers */
+  background: -moz-linear-gradient(45deg, #00bfa5 20%, #5ba5d1 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #00bfa5 20%, #5ba5d1 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #00bfa5 20%, #5ba5d1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00bfa5', endColorstr='#5ba5d1',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+@mixin primary-gradient-overlay() {
+  background: -moz-linear-gradient(45deg, rgba(0, 191, 165, 0.7) 0%, rgba(91, 165, 209, 0.7) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(0, 191, 165, 0.7) 0%,
+    rgba(91, 165, 209, 0.7) 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    45deg,
+    rgba(0, 191, 165, 0.7) 0%,
+    rgba(91, 165, 209, 0.7) 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00bfa5', endColorstr='#5ba5d1',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+@mixin score-very-low-gradient() {
+  background: #d90808; /* Old browsers */
+  background: -moz-linear-gradient(45deg, #d90808 20%, #de4f04 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #d90808 20%, #de4f04 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #d90808 20%, #de4f04 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#D90808', endColorstr='#DE4F04',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+@mixin score-low-gradient() {
+  background: #cb0549; /* Old browsers */
+  background: -moz-linear-gradient(45deg, #cb0549 20%, #f0238a 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #cb0549 20%, #f0238a 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #cb0549 20%, #f0238a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#CB0549', endColorstr='#F0238A',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+@mixin score-medium-gradient() {
+  background: #cddc1b; /* Old browsers */
+  background: -moz-linear-gradient(45deg, #cddc1b 20%, #75cc0e 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #cddc1b 20%, #75cc0e 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #cddc1b 20%, #75cc0e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#CDDC1B', endColorstr='#75CC0E',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+@mixin score-high-gradient() {
+  background: #75cc0e; /* Old browsers */
+  background: -moz-linear-gradient(45deg, #75cc0e 20%, #00bfa5 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #75cc0e 20%, #00bfa5 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #75cc0e 20%, #00bfa5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#75CC0E', endColorstr='#00BFA5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+@mixin score-very-high-gradient() {
+  background: #00bfa5; /* Old browsers */
+  background: -moz-linear-gradient(45deg, #00bfa5 20%, #5ba5d1 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #00bfa5 20%, #5ba5d1 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #00bfa5 20%, #5ba5d1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00BFA5', endColorstr='#5BA5D1',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+// ADD MY CLASS TO DIV TO APPLY A GREEN AND TEAL BACKGROUND
+.primary-gradient {
+  @include primary-gradient();
+}
+.score-very-low-gradient {
+  @include score-very-low-gradient();
+}
+.score-low-gradient {
+  @include score-low-gradient();
+}
+.score-medium-gradient {
+  @include score-medium-gradient();
+}
+.score-high-gradient {
+  @include score-high-gradient();
+}
+.score-very-high-gradient {
+  @include score-very-high-gradient();
+}
+.primary-gradient-overlay {
+  @include primary-gradient-overlay();
+}
+.secondary-gradient {
+  @include secondary-gradient();
+}
+// ADD MY CLASS TO DIV TO APPLY A GOLDEN FILTER TO ITS BG IMAGE
+.golden-overlay-gradient {
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    @include golden-gradient();
+  }
+  > div {
+    position: relative;
+    z-index: 1;
+  }
+  // VARIABLE CLASS FOR DIVs WITH BACKGROUND IMAGES THAT SCALE
+  // I NEED TO BE A CLASSED DIV WITH golden-overlay-gradient variable-height
+  // I NEED A BACKGROUND IMAGE
+  // MY PARENT NEEDS TO BE POSITIONED RELATIVE
+  // MY HEIGHT IS SET HERE AT 25% BUT CAN BE OVER WRITTEN
+  // IN COMPONENT FILE
+  // WITH OUT ME MY GRADIENT WILL SPILL OVER MY IMAGE
+  &.variable-height {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    min-height: 225px;
+    width: 100%;
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    @media screen and (min-width: $BREAKPOINT-960) {
+      height: 100%;
+      width: 100%;
+    }
+    @media screen and (min-width: $BREAKPOINT-600) {
+      min-height: 380px;
+      background-position: center center;
+    }
+  }
+}
+.primary-overlay-gradient {
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    @include primary-gradient-overlay();
+  }
+  > div {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.thrivent-overlay-gradient {
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: var(--picture-tile-background);
+  }
+  > div {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+// ADD MY CLASS TO DIV TO APPLY A WASH-OUT FILTER TO ITS BG IMAGE
+.white-wash-overlay {
+  position: relative;
+  &:before {
+    background-color: #e5e5e5;
+    opacity: 0.5;
+  }
+  > div {
+    position: relative;
+    z-index: 1;
+  }
+  // VARIABLE CLASS FOR DIVs WITH BACKGROUND IMAGES THAT SCALE
+  // I NEED TO BE A CLASSED DIV WITH white-wash-overlay variable-height
+  // I NEED A BACKGROUND IMAGE
+  // MY PARENT NEEDS TO BE POSITIONED RELATIVE
+  // MY HEIGHT IS SET HERE AT 25% BUT CAN BE OVER WRITTEN
+  // IN COMPONENT FILE
+  // WITH OUT ME MY GRADIENT WILL SPILL OVER MY IMAGE
+  &.variable-height {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    min-height: 25%;
+    width: 100%;
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    @media screen and (min-width: $BREAKPOINT-960) {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+// NEED TO ADD A DIV TO THE TOP OF A CARD AND APPLY THIS CLASS
+// TO GET THE ACCENT WITH ROUNDED CORNERS
+.top-card-accent-gradient {
+  @include primary-gradient();
+  position: absolute;
+  height: 6px;
+  top: 0;
+  left: 0px;
+  right: 0px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+// SPINNER
+@mixin mat-progress-spinner-theme($theme) {
+  .mat-progress-spinner,
+  .mat-progress-circle,
+  .mat-spinner {
+    path {
+      stroke: map_get($bpf-palette, 600); // default or primary, color is teal green
+    }
+    &.mat-accent path {
+      stroke: map_get($bpf-palette, 700); // accent, color is white
+    }
+    &.mat-warn path {
+      stroke: map_get($bpf-palette, 50); // warn, bpf blue
+    }
+  }
+}
+// FONTS
+// Classes should be used (and re-used!) to standardize font sizes/weights.
+// Until a functional group tackles styleguide creation and enforcement,
+// however, these are useful mixins.
+@mixin poppins-light($font-size: 14px, $line-height: 0) {
+  font-weight: 300;
+  font-family: Poppins, Helvetica, Arial, sans-serif;
+  font-size: $font-size;
+  @if $line-height == 1 {
+    line-height: $font-size;
+  }
+  @if $line-height == 2 {
+    line-height: $font-size + ($font-size / 2);
+  }
+}
+@mixin poppins-regular($font-size: 14px, $line-height: 0) {
+  font-weight: 400;
+  font-family: Poppins, Helvetica, Arial, sans-serif;
+  font-size: $font-size;
+  @if $line-height == 1 {
+    line-height: $font-size;
+  }
+  @if $line-height == 2 {
+    line-height: $font-size + ($font-size / 2);
+  }
+}
+@mixin poppins-medium($font-size: 14px, $line-height: 0) {
+  font-weight: 500;
+  font-family: Poppins, Helvetica, Arial, sans-serif;
+  font-size: $font-size;
+  @if $line-height == 1 {
+    line-height: $font-size;
+  }
+  @if $line-height == 2 {
+    line-height: $font-size + ($font-size / 2);
+  }
+}
+@mixin poppins-semi-bold($font-size: 14px, $line-height: 0) {
+  font-weight: 600;
+  font-family: Poppins, Helvetica, Arial, sans-serif;
+  font-size: $font-size;
+  @if $line-height == 1 {
+    line-height: $font-size;
+  }
+  @if $line-height == 2 {
+    line-height: $font-size + ($font-size / 2);
+  }
+}
+@mixin poppins-bold($font-size: 14px, $line-height: 0) {
+  font-weight: 700;
+  font-family: Poppins, Helvetica, Arial, sans-serif;
+  font-size: $font-size;
+  @if $line-height == 1 {
+    line-height: $font-size;
+  }
+  @if $line-height == 2 {
+    line-height: $font-size + ($font-size / 2);
+  }
+}
+
+@mixin montserrat-light($font-size: 14px, $line-height: 0) {
+  font-weight: 300;
+  font-family: Montserrat;
+  font-size: $font-size;
+  @if $line-height == 1 {
+    line-height: $font-size;
+  }
+  @if $line-height == 2 {
+    line-height: $font-size + ($font-size / 2);
+  }
+}
+@mixin montserrat-regular($font-size: 14px, $line-height: 0) {
+  font-weight: 400;
+  font-family: Montserrat;
+  font-size: $font-size;
+  @if $line-height == 1 {
+    line-height: $font-size;
+  }
+  @if $line-height == 2 {
+    line-height: $font-size + ($font-size / 2);
+  }
+}
+
+@mixin montserrat-medium($font-size: 14px, $line-height: 0) {
+  font-weight: 500;
+  font-family: Montserrat;
+  font-size: $font-size;
+  @if $line-height == 1 {
+    line-height: $font-size;
+  }
+  @if $line-height == 2 {
+    line-height: $font-size + ($font-size / 2);
+  }
+}
+
+@mixin montserrat-semibold($font-size: 14px, $line-height: 0) {
+  font-weight: 600;
+  font-family: Montserrat;
+  font-size: $font-size;
+  @if $line-height == 1 {
+    line-height: $font-size;
+  }
+  @if $line-height == 2 {
+    line-height: $font-size + ($font-size / 2);
+  }
+}
+
+@mixin montserrat-bold($font-size: 14px, $line-height: 0) {
+  font-weight: 700;
+  font-family: Montserrat;
+  font-size: $font-size !important;
+  @if $line-height == 1 {
+    line-height: $font-size;
+  }
+  @if $line-height == 2 {
+    line-height: $font-size + ($font-size / 2);
+  }
+}
+.primary-light-button {
+  color: $sky-blue;
+  background-color: $white;
+  border-radius: 2px;
+  padding: 15px;
+  line-height: 1;
+  cursor: pointer;
+  @include poppins-medium();
+  .mat-button-toggle-button {
+    border: 0;
+    background: none;
+    color: inherit;
+    padding: initial;
+    margin: auto;
+    font: inherit;
+    outline: none;
+  }
+}
+.primary-light-button[disabled] {
+  background-color: $fog-grey;
+  color: $clay-grey;
+}
+.primary-text-only-button {
+  color: $white;
+  background-color: Transparent;
+  padding: 13px 22px;
+  border: none;
+  cursor: pointer;
+  @include poppins-medium();
+  &.underline {
+    text-decoration: underline;
+  }
+}
+.primary-transparent-button {
+  color: $white;
+  background: none;
+  border: 2px solid $white;
+  padding: 13px 22px;
+  cursor: pointer;
+  border-radius: 10px;
+  @include poppins-bold();
+}
+.primary-background-border-button {
+  padding: 10px;
+  text-align: center;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: $white;
+  color: $sky-blue;
+  border: 2px solid $sky-blue;
+  cursor: pointer;
+}
+
+@mixin primary-text-button($color: $sky-blue) {
+  color: $color;
+  background-color: Transparent;
+  padding: 13px 32px;
+  border: none;
+  cursor: pointer;
+  @include poppins-medium();
+  &.underline {
+    text-decoration: underline;
+  }
+}
+
+.primary-text-button {
+  @include primary-text-button();
+}
+
+.primary-light-text-button {
+  color: $white;
+  background-color: $sky-blue;
+  border-radius: 4px;
+  padding: 15px 32px;
+  line-height: 1;
+  cursor: pointer;
+  @include poppins-medium();
+  .mat-button-toggle-button {
+    border: 0;
+    background: none;
+    color: inherit;
+    padding: initial;
+    margin: auto;
+    font: inherit;
+    outline: none;
+  }
+}
+.primary-light-text-button[disabled] {
+  background-color: $fog-grey;
+  color: $clay-grey;
+}
+
+// thrive together re-branding styles BEGIN
+@mixin primary-button(
+  $font-size: 14px,
+  $margin-top: 0px,
+  $margin-right: 0px,
+  $margin-left: 0px,
+  $margin-bottom: 0px,
+  $padding: 10px,
+  $color: $white,
+  $background-color: $moonstone-blue
+) {
+  color: $color !important;
+  background-color: $background-color !important;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: $font-size;
+  font-family: Montserrat;
+  text-align: center;
+  margin-top: $margin-top;
+  margin-left: $margin-left;
+  margin-right: $margin-right;
+  margin-bottom: $margin-bottom;
+  padding: $padding;
+  height: 38px;
+  border-radius: 18px;
+}
+
+.primary-button[hover] {
+  @include primary-button($background-color: $moonstone-blue, $color: $white);
+}
+
+.primary-button[disabled] {
+  @include primary-button($background-color: #eaeaea, $color: #b8bdc0);
+}
+
+@mixin primary-button-text($font-size: 14px, $padding: 10px) {
+  cursor: pointer;
+  border: none;
+  font-weight: 500;
+  font-size: $font-size;
+  font-family: Montserrat;
+  color: $moonstone-blue;
+  text-align: center;
+  height: 38px;
+  background-color: Transparent;
+}
+
+@mixin quiz-button {
+  height: 50px;
+  min-width: 155px;
+  background: $white;
+  @include montserrat-bold('14px');
+  color: $cadet;
+  text-align: center;
+  border-radius: 25px;
+  border: none;
+  box-shadow: 0px 2px 9px 3px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  &:hover {
+    color: $moonstone-blue;
+  }
+  &:disabled {
+    color: $lavender-grey;
+    box-shadow: 0px 2px 9px 3px rgba(0, 0, 0, 0.06);
+  }
+}
+
+@mixin subtitle-light($font-size: 16px) {
+  @include montserrat-light($font-size);
+  font-size: $font-size;
+  color: $silver;
+  letter-spacing: 0.07em;
+}
+
+@mixin subtitle-medium($font-size: 16px) {
+  @include montserrat-medium($font-size);
+  font-size: $font-size;
+  color: $silver;
+  letter-spacing: 0.07em;
+}
+
+@mixin bold-title($font-size: 20px) {
+  @include montserrat-semibold($font-size);
+  color: $black;
+  letter-spacing: 0.07em;
+}
+
+@mixin subtitle-gray($font-size: 16px) {
+  @include montserrat-semibold($font-size);
+  color: $dim-gray;
+  letter-spacing: 0.07em;
+}
+
+@mixin black-text($font-size: 11px) {
+  @include montserrat-regular($font-size);
+  color: $outer-space-black;
+  letter-spacing: 0.05em;
+  font-weight: bold;
+}
+
+@mixin gray-text($font-size: 11px) {
+  @include montserrat-medium($font-size);
+  color: $gray;
+  letter-spacing: 0.05em;
+}
+
+@mixin darkgray-text($font-size: 11px) {
+  @include montserrat-medium($font-size);
+  color: $darkgray;
+  letter-spacing: 0.05em;
+}
+
+@mixin ashgray-text($font-size: 16px) {
+  @include montserrat-regular($font-size);
+  color: $ash-grey;
+  letter-spacing: 0.05em;
+}
+
+.primary-button {
+  @include primary-button();
+}
+
+.primary-button-text {
+  @include primary-button-text();
+}
+
+.quiz-button {
+  @include quiz-button();
+}
+
+.primary-link-button {
+  @include primary-text-button($lava-red);
+}
+
+.subtitle-light {
+  @include subtitle-light();
+}
+
+.subtitle-medium {
+  @include subtitle-medium();
+}
+
+.bold-title {
+  @include bold-title();
+}
+
+.subtitle-gray {
+  @include subtitle-gray();
+}
+
+.black-text {
+  @include black-text();
+}
+
+.gray-text {
+  @include gray-text();
+}
+
+.darkgray-text {
+  @include darkgray-text();
+}
+
+.ashgray-text {
+  @include ashgray-text();
+}
+
+.top-card-results-gradient {
+  background-color: $moonstone-blue;
+  position: absolute;
+  height: 6px;
+  top: 0;
+  left: 0px;
+  right: 0px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+.background-primary {
+  background-color: var(--primary);
+}
+
+// thrive together re-branding styles END

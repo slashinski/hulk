@@ -1,0 +1,257 @@
+.session-panel,
+.sms-panel {
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+
+  @media screen and (max-width: $BREAKPOINT-600) {
+    max-width: 90vw;
+  }
+
+  mat-dialog-container {
+    background-color: #ffffff;
+    max-width: 100%;
+  }
+}
+
+.go-panel {
+  max-width: 300px;
+  width: 33%;
+  margin: auto;
+
+  @media screen and (max-width: $BREAKPOINT-600) {
+    width: 90vw;
+  }
+
+  mat-dialog-container {
+    background-color: #ffffff;
+    border-radius: 15px;
+  }
+}
+
+.feedback-panel {
+  mat-dialog-container {
+    background-color: #ffffff;
+    padding: 5px;
+    overflow: hidden;
+
+    @media screen and (min-width: $BREAKPOINT-600) {
+      width: 595px;
+    }
+  }
+}
+
+.modal-panel {
+  mat-dialog-container {
+    background-color: #ffffff;
+    overflow: hidden;
+
+    @media screen and (min-width: $BREAKPOINT-600) {
+      width: 595px;
+    }
+  }
+}
+
+.itemized-summary-modal {
+  @media screen and (max-width: $BREAKPOINT-600) {
+    width: 100%;
+  }
+  @media screen and (min-width: $BREAKPOINT-600) {
+    min-width: 375px;
+  }
+  mat-icon {
+    color: $white;
+  }
+  .mat-dialog-container {
+    background: none;
+
+    box-shadow: none;
+  }
+
+  .mat-dialog-content {
+    max-height: none;
+    padding: 0 !important;
+  }
+  .mat-button-toggle-group {
+    width: 100%;
+  }
+  @supports (-webkit-overflow-scrolling: touch) {
+    /* CSS specific to iOS devices */
+    .toggle-flow {
+      max-height: 148px;
+      overflow-y: scroll;
+    }
+  }
+
+  @supports not (-webkit-overflow-scrolling: touch) {
+    /* CSS for other than iOS devices */
+    .toggle-flow {
+      max-height: 30vh;
+      overflow-y: scroll;
+    }
+  }
+
+  .dollar-container {
+    left: 0 !important;
+  }
+
+  .mat-button-toggle-label-content {
+    text-align: left;
+    border-top: solid 1px $dark-grey;
+  }
+
+  .mat-button-toggle-checked {
+    background-color: $white;
+    color: black;
+  }
+
+  .button-selected-needs {
+    background-color: $toolbox-transparent;
+    color: $white;
+    font-weight: bold;
+  }
+
+  .button-selected-wants {
+    background-color: $dark-tangerine-transparent;
+    color: $white;
+    font-weight: bold;
+  }
+
+  .button-selected-savings {
+    background-color: $mantis-transparent;
+    color: $white;
+    font-weight: bold;
+  }
+
+  .mat-dialog-actions {
+    text-align: center;
+  }
+  .summary-container {
+    padding: 0;
+    overflow: hidden;
+    border-radius: 20px;
+    background: $white;
+  }
+  .header {
+    background: $toolbox;
+    height: 54px;
+  }
+
+  .title {
+    color: $white;
+    @include montserrat-bold(18px);
+    text-align: center;
+    margin: 0;
+    text-transform: capitalize;
+  }
+
+  .content {
+    .needs {
+      color: $toolbox;
+      @include montserrat-bold(17px);
+      text-transform: capitalize;
+      background: none;
+      text-align: center;
+    }
+    .wants {
+      color: $dark-tangerine;
+      @include montserrat-bold(17px);
+      text-transform: capitalize;
+      background: none;
+      text-align: center;
+    }
+    .savings {
+      color: $mantis;
+      @include montserrat-bold(17px);
+      text-transform: capitalize;
+      background: none;
+      text-align: center;
+    }
+  }
+
+  .content {
+    padding: 24px;
+  }
+  .footer-slice {
+    background: $toolbox;
+    height: 25px;
+  }
+}
+
+.msp-delete-modal {
+  @media screen and (max-width: $BREAKPOINT-960) {
+    width: 100%;
+
+    & .quiz-button {
+      min-width: 100px;
+    }
+  }
+
+  @media screen and (min-width: $BREAKPOINT-960) {
+    min-width: 375px;
+  }
+  mat-icon {
+    color: $black;
+  }
+
+  button.mat-icon-button {
+    background-color: $white;
+    margin: 10px 0;
+  }
+  .mat-dialog-container {
+    background: none;
+    box-shadow: none;
+  }
+
+  .mat-dialog-content {
+    max-height: none;
+    padding: 0 !important;
+    margin: auto;
+    overflow: unset;
+  }
+  .mat-button-toggle-group {
+    width: 100%;
+  }
+
+  .mat-button-toggle-label-content {
+    text-align: left;
+    border-top: solid 1px $dark-grey;
+  }
+
+  .mat-dialog-actions {
+    text-align: center;
+  }
+  .delete-container {
+    padding: 0;
+    overflow: hidden;
+    border-radius: 20px;
+    background: $white;
+  }
+  .header {
+    background: $white;
+    padding: 24px 24px 12px 24px;
+  }
+  .title {
+    @include montserrat-bold(25px);
+    color: $black;
+    text-align: center;
+    margin: 0;
+  }
+
+  .content-container {
+    padding: 12px 24px 24px 24px;
+  }
+
+  .content {
+    @include montserrat-medium(14px);
+    color: $dark-grey;
+    line-height: 17px;
+    letter-spacing: 0.02em;
+    text-align: center;
+  }
+
+  .delete-dialog_actions {
+    margin-top: 24px;
+    width: 100%;
+  }
+}

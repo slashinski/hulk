@@ -1,0 +1,22 @@
+@import './variables.scss';
+@import './utilities.scss';
+
+h1.dashboard-widget-title {
+  @include poppins-regular(14px, 1);
+  margin-bottom: 12px;
+  color: $clay-grey;
+}
+
+@media screen and (min-width: $BREAKPOINT-600) {
+  h1.dashboard-widget-title {
+    margin: 12px 0;
+  }
+}
+
+.feed-item mat-card-footer cta-button {
+  padding-top: 20px;
+}
+
+.feed-item {
+  padding: 20px;
+}

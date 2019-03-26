@@ -1,0 +1,57 @@
+@import './variables';
+
+.help {
+  margin: 0 0 18px 0;
+}
+.sub-head {
+  margin: 8px 0 0 0;
+}
+.mat-card {
+  min-width: 504px;
+}
+.flex-container {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top center;
+  position: relative;
+  .primary-container {
+    padding-top: 30px;
+    padding-bottom: 20px;
+    header {
+      color: $white;
+      text-align: center;
+      padding: 10px 0 15px 0;
+      h4 {
+        margin: 6px 0 0 0;
+        padding: 0;
+      }
+    }
+  }
+}
+@media screen and (min-width: $BREAKPOINT-960) {
+  .flex-container {
+    background-size: cover;
+    .primary-container {
+      padding-top: 30px;
+      padding-bottom: 40px;
+      header {
+        padding: 55px 0;
+        text-align: left;
+        h4 {
+          margin: 25px 0 0 0;
+          padding: 0 5px 0 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $BREAKPOINT-600) {
+  .sub-head {
+    margin: 10px 0 0 0;
+  }
+  .mat-card {
+    min-width: 100%;
+    width: 100%;
+  }
+}

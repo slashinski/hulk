@@ -1,0 +1,300 @@
+@import '../theme/variables.scss';
+
+body {
+  .mat-card {
+    $card-padding: 30px;
+    &.vertical-form-card {
+      width: 90%;
+      margin: 20px 0;
+      padding: $card-padding;
+      color: $clay-grey;
+      overflow: hidden;
+    }
+    &.right-form-card {
+      width: 90%;
+      padding: 10px 20px;
+      margin: 0;
+    }
+    &.centered-form-card {
+      margin: 50px 0 70px 0;
+    }
+    > footer {
+      position: relative;
+      margin-top: 35px;
+      padding: $card-padding 0 0;
+      &:before {
+        content: '';
+        position: absolute;
+        left: -$card-padding * 2;
+        right: -$card-padding * 2;
+        top: 0;
+        height: 1px;
+        background-color: $white-mist;
+      }
+    }
+  }
+  form {
+    header {
+      margin: 22px 0 12px 0;
+      color: $ink-black;
+      .sub-head {
+        color: $clay-grey;
+      }
+    }
+    .mat-raised-button {
+      margin: 13px 0 20px 0;
+    }
+  }
+  .mat-raised-button {
+    background-color: $sky-blue;
+    color: $white;
+    padding: 13px 22px;
+    line-height: 1;
+    &:hover {
+      background-color: $cobalt-blue;
+    }
+  }
+
+  .mat-form-field-labelwrapper {
+    overflow: visible;
+  }
+  .mat-form-field {
+    margin: 12px 0 15px 0;
+  }
+
+  app-simple-currency-input-v2 .mat-form-field-infix {
+    min-width: 180px;
+    width: auto;
+  }
+
+  .mat-input-element {
+    color: $ink-black;
+    font-size: 16px;
+  }
+  .mat-form-field-label {
+    color: $clay-grey;
+  }
+  .mat-form-field-label.mat-focused {
+    color: $tea-green;
+  }
+  .mat-option:hover:not(.mat-option-disabled),
+  .mat-option:focus:not(.mat-option-disabled) {
+    border-right: 3px solid $tea-green;
+    background: none;
+    color: $tea-green;
+  }
+  .mat-form-field-underline .mat-form-field-ripple,
+  .mat-select:focus:not(.mat-select-disabled) .mat-select-underline {
+    background-color: $tea-green;
+  }
+  .mat-hint {
+    font-size: 12px;
+    line-height: 20px;
+    top: 48px;
+    color: $error-red;
+  }
+  .mat-option:hover:not(.mat-option-disabled),
+  .mat-option:focus:not(.mat-option-disabled) {
+    border-right: 3px solid $tea-green;
+    background: none;
+    color: $tea-green;
+  }
+  .mat-radio-checked .mat-radio-label-content,
+  .mat-select:focus:not(.mat-select-disabled) .mat-select-arrow {
+    color: $tea-green;
+  }
+  .error-box {
+    color: $error-red;
+    text-align: center;
+    padding: 10px 20px;
+    border: solid 1px $error-red;
+    border-radius: 2px;
+  }
+
+  .mat-form-field-underline .mat-form-field-ripple {
+    background-color: $tea-green;
+  }
+
+  .form-input-underline {
+    .mat-form-field-underline .mat-form-field-ripple,
+    .mat-form-field-underline {
+      background-color: $white;
+    }
+  }
+  .form-input-underline {
+    .mat-select-value,
+    .mat-select-arrow {
+      color: $white;
+    }
+  }
+
+  .mat-form-field-invalid .mat-form-field-ripple {
+    background-color: $error-red;
+  }
+
+  .mat-focused .mat-form-field-label {
+    color: $tea-green;
+  }
+
+  .mat-form-field-invalid .mat-form-field-label,
+  .mat-form-field-invalid .mat-placeholder-required {
+    color: $error-red;
+  }
+
+  .mat-form-field-invalid .mat-form-field-underline,
+  .mat-input-error {
+    border-color: $error-red;
+  }
+
+  .mat-focused .mat-option.mat-selected,
+  .mat-option.mat-selected {
+    color: $tea-green;
+  }
+
+  .mat-select:focus:not(.mat-select-disabled) .mat-select-trigger {
+    color: $tea-green;
+  }
+
+  .mat-select-trigger {
+    color: $clay-grey;
+  }
+
+  .mat-raised-button.mat-primary[disabled],
+  .mat-raised-button.mat-warn[disabled],
+  .mat-raised-button[disabled][disabled] {
+    color: rgba(255, 255, 255, 0.5);
+    background-color: $clay-grey;
+  }
+
+  // !important is necessary or Material will make the checkmark black with its
+  // own !important directive, so we do it pre-emptively it here. :(
+  .mat-checkbox-checkmark-path {
+    stroke: $checkbox-mark-color !important;
+  }
+
+  mat-checkbox .mat-checkbox-label {
+    color: $clay-grey;
+  }
+
+  mat-checkbox.mat-checkbox-checked .mat-checkbox-label {
+    color: $tea-green;
+  }
+  .mat-form-field {
+    width: auto;
+  }
+  .multi-form-full-width {
+    .mat-form-field-label {
+      color: white;
+    }
+    .mat-form-field-label.mat-focused {
+      color: white;
+    }
+    .mat-focused .mat-form-field-label {
+      color: white;
+    }
+    .mat-hint {
+      color: $error-red;
+      background-color: rgba(255, 255, 255, 0.75);
+      padding: 0px 10px;
+      line-height: 1;
+    }
+    .mat-form-field-subscript-wrapper {
+      margin-top: 0;
+    }
+    .mat-form-field-underline {
+      position: relative;
+      top: 0px;
+    }
+    .mat-form-field-subscript-wrapper {
+      position: relative;
+    }
+  }
+
+  .inputPlaceholder {
+    .mat-form-field-label {
+      color: $white;
+      font-size: 30px;
+      line-height: 24px;
+      padding: 5px 0;
+    }
+  }
+
+  .textAreaForm {
+    width: 100%;
+    mat-form-field {
+      width: 80%;
+      textarea {
+        margin-top: 10px;
+        font-size: 40px;
+        line-height: 50px;
+        color: $white;
+        font-weight: 600;
+        overflow: hidden;
+      }
+      mat-hint {
+        color: $white;
+      }
+    }
+  }
+
+  @media screen and (min-width: $BREAKPOINT-600) {
+    .mat-card {
+      &.vertical-form-card {
+        width: 100%;
+        max-width: 504px;
+        padding: 30px 60px;
+      }
+      &.centered-form-card {
+        margin: 100px 0 140px 0;
+      }
+      &.right-form-card {
+        width: 100%;
+        padding: 10px 20px;
+        margin: 0;
+      }
+    }
+  }
+
+  @media screen and (max-width: $BREAKPOINT-960) {
+    .inputPlaceholder .mat-form-field-label {
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .inputPlaceholder .mat-form-field-label {
+      white-space: normal;
+      text-overflow: inherit;
+      overflow: auto;
+    }
+  }
+
+  @media screen and (min-width: $BREAKPOINT-1280) {
+  }
+}
+
+.white-highlight .mat-radio-checked .mat-radio-label-content {
+  color: $white;
+}
+
+.white-highlight .mat-radio-button.mat-accent .mat-radio-inner-circle {
+  background-color: $white;
+}
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle .white-highlight {
+  border-color: $white;
+}
+
+.mat-checked .mat-slide-toggle-bar {
+  background-color: $white;
+}
+
+.mat-checked .mat-slide-toggle-thumb {
+  background-color: $white;
+}
+.toggle-switch .mat-slide-toggle-bar {
+  background-color: gray;
+}
+
+.mat-radio-label-content {
+  white-space: normal;
+}

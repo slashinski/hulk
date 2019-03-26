@@ -1,0 +1,339 @@
+@import './variables';
+@import '../../../node_modules/@angular/material/theming';
+
+// Include non-theme styles for core.
+@include mat-core();
+
+$mat-font-family: 'Poppins';
+.mat-button-toggle,
+.mat-button-base,
+.mat-button,
+.mat-raised-button,
+.mat-fab,
+.mat-icon-button,
+.mat-mini-fab,
+.mat-card,
+.mat-checkbox,
+.mat-form-field,
+.mat-list,
+.mat-menu-item,
+.mat-radio-button,
+.mat-select,
+.mat-list .mat-list-item .mat-list-item-content,
+.mat-nav-list .mat-list-item .mat-list-item-content,
+.mat-simple-snackbar,
+.mat-tab-label,
+.mat-slide-toggle-content,
+.mat-toolbar,
+.mat-tooltip  {
+  font-family: $mat-font-family, sans-serif !important;
+}
+
+// define custom colors used within theme
+$bpf-palette: (
+  50: $taupe,
+  100: $error-red,
+  200: $tea-green,
+  300: $ink-black,
+  400: $charcoal-black,
+  500: $fog-grey,
+  600: $tea-green, // progress spinner
+  700: $white,
+  800: $white-mist,
+  900: $cobalt-blue,
+  A100: $clay-grey,
+  A200: #ff6e40,
+  A400: #ff3d00,
+  A700: $ink-black,
+  A800: #b2dfdb, // progress bar accent color background
+  contrast: (
+    50: $white, // color on dark element background
+    100: $white,
+    200: $white,
+    300: $fog-grey,
+    400: $black-87-opacity,
+    500: $white,
+    600: $white,
+    700: $black-87-opacity,
+    800: $black-87-opacity,
+    900: $white,
+    A100: $white,
+    A200: $black-87-opacity,
+    A400: $white,
+    A700: $white,
+  )
+);
+
+// Define a theme.
+$primary: mat-palette($bpf-palette, 50);
+$primary-link-color: $primary; //$sky-blue,
+$accent: mat-palette($bpf-palette, 200); // $tea-green
+$warn: mat-palette($bpf-palette, 100); // $error-red // any mat-color="warn"
+// colors for text and icons
+$foreground: (
+  base:            map_get($bpf-palette, A700), // text colors in card body
+  divider:         $white-mist, // dividers
+  dividers:        $white-mist,
+  disabled:        map_get($bpf-palette, 50),  // $sky-blue
+  disabled-button: map_get($bpf-palette, 300), // $ink-black
+  disabled-text:   map_get($bpf-palette, 300), // $ink-black
+  hint-text:       map_get($bpf-palette, 300), // $ink-black // down arrows select field, select box underline
+  secondary-text:  map_get($bpf-palette, A100), // $clay-grey // unselected radio outline
+  icon:            pink,
+  icons:           blue,
+  text:            map_get($bpf-palette, 300), // $ink-black // text and icons inside an md item, card, toolbar
+  slider-min:        rgba(white, 0.87),
+  slider-off:        rgba(white, 0.26),
+  slider-off-active: rgba(white, 0.38),
+  quiz-text: $white,
+  white-button: $sky-blue,
+  show-details: $clay-grey,
+  progress-bar-active: $tea-green,
+  secondary-text-card: $trolley-grey,
+  white-text: $white,
+  pathway-quiz :$trolley-grey,
+  mat-slider-thumb-regular :$white,
+  payoff-projector-result: $trolley-grey
+);
+// colors used for element backgrounds
+$background: (
+  status-bar: $white,
+  app-bar:    map_get($bpf-palette, 400) , // $charcoal-black //toolbar background
+  background: map_get($bpf-palette, 400) , // $charcoal-black // background of any material item with class="mat-app-background"
+  hover:      map_get($bpf-palette, 700), // $white // active and hover backgrounds of select elements
+  card:       $white, // card background
+  dialog:     map_get($mat-grey, 800),
+  disabled-button: map_get($bpf-palette, 500), // $fog-grey
+  raised-button: map_get($bpf-palette, 50), // $sky-blue // any mat-raised-button with no class
+  focused-button: $black-6-opacity,
+  selected-button: map_get($mat-grey, 300),
+  selected-disabled-button: map_get($mat-grey, 400),
+  disabled-button-toggle: map_get($mat-grey, 200),
+  unselected-chip: map_get($mat-grey, 700),
+  disabled-list-option: black,
+  light-background: $white,
+  progress-bar-tile: $mercury,
+  mat-slider-pathway: $trolley-grey
+);
+
+@function mat-bpf-theme($primary, $accent, $warn, $background, $foreground) {
+  @return (
+    primary: $primary,
+    accent: $accent,
+    warn: $warn,
+    is-dark: true,
+    foreground: $foreground,
+    background: $background
+  );
+}
+
+$theme: mat-bpf-theme($primary, $accent, $warn, $background, $foreground);
+
+a {
+  color: map_get($bpf-palette, 50);
+  font-size: 14px;
+  cursor: pointer;
+}
+a:active, a:hover {
+  color: map_get($bpf-palette, 900);
+}
+button {
+  font-size: 14px;
+}
+
+@mixin mat-progress-spinner-theme($theme) {
+
+  .mat-progress-spinner, .mat-spinner {
+    circle {
+      stroke: map_get($bpf-palette, 600); // default or primary, color is teal green
+    }
+
+    &.mat-accent circle {
+      stroke: map_get($bpf-palette, 700); // accent, color is white
+    }
+
+    &.mat-warn circle {
+      stroke: map_get($bpf-palette, 50); // warn, bpf blue;
+    }
+  }
+}
+
+@mixin mat-progress-bar-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+
+  .mat-progress-bar-background {
+    background-image: none;
+  }
+
+  .mat-progress-bar-buffer {
+    background-color: mat-color($primary, lighter);
+  }
+
+  .mat-progress-bar-fill::after {
+    background-color: mat-color($primary);
+  }
+
+  .mat-progress-bar.mat-accent {
+    .mat-progress-bar-background {
+      fill: mat-color($accent, lighter);
+    }
+
+    .mat-progress-bar-buffer {
+      background-color: mat-color($accent, A800);
+    }
+
+    .mat-progress-bar-fill::after {
+      background-color: mat-color($accent);
+    }
+  }
+
+  .mat-progress-bar.mat-warn {
+    .mat-progress-bar-background {
+      fill: mat-color($warn, lighter);
+    }
+
+    .mat-progress-bar-buffer {
+      background-color: mat-color($warn, lighter);
+    }
+
+    .mat-progress-bar-fill::after {
+      background-color: mat-color($warn);
+    }
+  }
+}
+@mixin _mat-slider-inner-content-theme($bpf-palette) {
+  .mat-slider-track-fill,
+  .mat-slider-thumb,
+  .mat-slider-thumb-label {
+    background-color: mat-color($bpf-palette, 700);
+  }
+
+  .mat-slider-thumb-label-text {
+    color: mat-color($bpf-palette, 200);
+  }
+}
+@mixin mat-slider-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  $mat-slider-off-color: map_get($bpf-palette, 700);
+  $mat-slider-off-focused-color: map_get($bpf-palette, 700);
+  $mat-slider-disabled-color: map_get($bpf-palette, 700);
+  $mat-slider-labeled-min-value-thumb-color: mat-color($foreground, slider-min);
+  $mat-slider-labeled-min-value-thumb-label-color: mat-color($foreground, slider-off);
+  $mat-slider-focus-ring-color: map_get($bpf-palette, 700);
+  $mat-slider-focus-ring-min-value-color: mat-color($foreground, base, 0.12);
+  $mat-slider-tick-color: map_get($bpf-palette, 700);
+  $mat-slider-tick-size: 10px;
+
+  .mat-slider-track-background {
+    background-color: rgba(white, 0.38) ;
+  }
+
+  .mat-primary {
+    @include _mat-slider-inner-content-theme($primary);
+  }
+
+  .mat-accent {
+    @include _mat-slider-inner-content-theme($accent);
+  }
+
+  .mat-warn {
+    @include _mat-slider-inner-content-theme($warn);
+  }
+
+  .mat-slider-focus-ring {
+    background-color: $mat-slider-focus-ring-color;
+  }
+
+  .mat-slider:hover,
+  .cdk-focused {
+    .mat-slider-track-background {
+      background-color: rgba(white, 0.38);
+    }
+  }
+
+  .mat-slider-disabled {
+    .mat-slider-track-background,
+    .mat-slider-track-fill,
+    .mat-slider-thumb {
+      background-color: rgba(white, 0.38);
+    }
+
+    &:hover {
+      .mat-slider-track-background {
+        background-color: rgba(white, 0.38);
+      }
+    }
+  }
+
+  .mat-slider-min-value {
+    .mat-slider-focus-ring {
+      background-color: $mat-slider-focus-ring-min-value-color;
+    }
+
+    &.mat-slider-thumb-label-showing {
+      .mat-slider-thumb,
+      .mat-slider-thumb-label {
+        background-color: $mat-slider-labeled-min-value-thumb-color;
+      }
+
+      &.cdk-focused {
+        .mat-slider-thumb,
+        .mat-slider-thumb-label {
+          background-color: $mat-slider-labeled-min-value-thumb-label-color;
+        }
+      }
+    }
+
+    &:not(.mat-slider-thumb-label-showing) {
+      .mat-slider-thumb {
+        border-color: $mat-slider-off-color;
+        background-color: transparent;
+      }
+
+      &:hover,
+      &.cdk-focused {
+        .mat-slider-thumb {
+          border-color: $mat-slider-off-focused-color;
+        }
+
+        &.mat-slider-disabled .mat-slider-thumb {
+          border-color: $mat-slider-disabled-color;
+        }
+      }
+    }
+  }
+
+  .mat-slider-has-ticks .mat-slider-wrapper::after {
+    border-color: $mat-slider-tick-color;
+  }
+
+  .mat-slider-horizontal .mat-slider-ticks {
+    background-image: repeating-linear-gradient(to right, $mat-slider-tick-color,
+        $mat-slider-tick-color $mat-slider-tick-size, transparent 0, transparent);
+    // Firefox doesn't draw the gradient correctly with 'to right'
+    // (see https://bugzilla.mozilla.org/show_bug.cgi?id=1314319).
+    background-image: -moz-repeating-linear-gradient(0.0001deg, $mat-slider-tick-color,
+        $mat-slider-tick-color $mat-slider-tick-size, transparent 0, transparent);
+  }
+
+  .mat-slider-vertical .mat-slider-ticks {
+    background-image: repeating-linear-gradient(to bottom, $mat-slider-tick-color,
+        $mat-slider-tick-color $mat-slider-tick-size, transparent 0, transparent);
+  }
+}
+
+// Include all theme styles for the components.
+@include angular-material-theme($theme);
+
+@import '../theme/forms';
+@import '../theme/cards';
+@import '../theme/dashboard';
+@import '../theme/modals';
+@import './tooltip.scss';
