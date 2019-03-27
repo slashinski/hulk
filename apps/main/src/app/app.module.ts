@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 
 // libraries
-import { UiModule } from '@hulk/ui';
+import { UiProductsModule } from '@hulk/ui/products';
 
 const appBaseHref = environment.BASE_HREF;
 
@@ -23,7 +23,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    UiModule,
+    UiProductsModule,
     HttpClientModule,
     TranslateModule.forRoot({
       loader: { provide: TranslateLoader, useFactory: HttpLoaderFactory, deps: [HttpClient] }

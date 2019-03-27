@@ -27,7 +27,8 @@
       "@hulk/ui/custom-material": ["libs/ui/custom-material/src/index.ts"],
       "@hulk/ui/accordian": ["libs/ui/accordian/src/index.ts"],
       "@hulk/ui/fast-click": ["libs/ui/fast-click/src/index.ts"],
-      "@hulk/ui/split-layout": ["libs/ui/split-layout/src/index.ts"]
+      "@hulk/ui/split-layout": ["libs/ui/split-layout/src/index.ts"],
+      "@hulk/ui/products": ["libs/ui/products/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

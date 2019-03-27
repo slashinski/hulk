@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 import { MediaObserver } from '@angular/flex-layout';
 
 @Component({
-  selector: 'hulk-products',
+  selector: 'hulk-ui-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss']
 })

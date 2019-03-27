@@ -52,6 +52,9 @@
     },
     "products-e2e": {
       "tags": []
+    },
+    "ui-products": {
+      "tags": []
     }
   }
 }
